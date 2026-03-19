@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOMI Café und Pizza Bar</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <style>
         body {
             font-family: 'Lato', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #E4C597; /* Background color similar to light tan */
+            background-color: #E4C597;
             color: #333;
             overflow-x: hidden;
         }
+
+        /* HEADER */
+
         .header {
             background: url('header-bg.jpg') no-repeat center center/cover;
             color: white;
@@ -23,6 +29,7 @@
             padding: 100px 20px;
             position: relative;
         }
+
         .header::after {
             content: '';
             position: absolute;
@@ -33,6 +40,7 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
+
         .header h1 {
             position: relative;
             z-index: 2;
@@ -41,46 +49,70 @@
             white-space: nowrap;
             overflow: hidden;
             border-right: 4px solid white;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
+
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
+
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: white; }
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: white;
+            }
         }
+
         .header p {
             position: relative;
             z-index: 2;
             font-size: 1.2em;
             margin-top: 20px;
         }
+
+        /* NAVBAR */
+
         .navbar {
             display: flex;
             justify-content: center;
-            background-color: #473F32; /* Dark brown color */
+            background-color: #473F32;
             padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
+
         .navbar a {
             color: white;
             text-decoration: none;
             padding: 14px 20px;
-            transition: background 0.3s, transform 0.3s;
+            transition: background .3s, transform .3s;
         }
+
         .navbar a:hover {
-            background-color: #A99175; /* Medium brown color */
+            background-color: #A99175;
             transform: scale(1.1);
         }
+
+        /* CONTENT */
+
         .container {
             width: 90%;
             margin: auto;
             overflow: hidden;
         }
+
         .content {
             padding: 20px;
             background: white;
@@ -89,74 +121,120 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity .5s ease-out, transform .5s ease-out;
         }
+
         .content.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .content img {
             width: 100%;
             border-radius: 8px;
-            transition: transform 0.3s;
+            transition: transform .3s;
         }
+
         .content img:hover {
             transform: scale(1.05);
         }
+
+        /* FOOTER */
+
         .footer {
-            background-color: #473F32; /* Dark brown color */
+            background-color: #473F32;
             color: white;
             text-align: center;
             padding: 20px 0;
         }
+
         .social-icons {
             margin-top: 10px;
         }
+
         .social-icons a {
             color: white;
             margin: 0 10px;
             font-size: 1.5em;
-            transition: color 0.3s, transform 0.3s;
+            transition: color .3s, transform .3s;
         }
+
         .social-icons a:hover {
             color: #A99175;
             transform: scale(1.2);
         }
+
+        /* BACK TO TOP */
+
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
             display: none;
-            background: #A99175; /* Medium brown color */
+            background: #A99175;
             color: white;
             padding: 10px 20px;
             border-radius: 50%;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            transition: background .3s, transform .3s;
         }
+
         .back-to-top:hover {
-            background: #473F32; /* Dark brown color */
+            background: #473F32;
             transform: scale(1.1);
         }
-        @media (min-width: 768px) {
+
+        /* DESKTOP LAYOUT */
+
+        @media (min-width:768px) {
+
             .navbar {
                 justify-content: space-between;
             }
+
             .content {
                 display: flex;
                 align-items: center;
                 gap: 20px;
             }
+
             .content img {
                 width: 50%;
             }
+
             .content div {
                 width: 50%;
             }
+
+        }
+
+        /* MOBILE FIX */
+
+        @media (max-width:600px) {
+
+            .header {
+                padding: 70px 15px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                max-width: 90%;
+                margin: auto;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
         }
     </style>
 </head>
+
 <body>
+
     <div class="header">
         <h1>BOMI Café und Lounge Bar</h1>
         <p>Handwerksstraße 22, 9500 Villach, Österreich</p>
@@ -170,24 +248,28 @@
     </div>
 
     <div class="container">
+
         <div id="home" class="content animate__animated animate__fadeInUp">
-            <img src="BOMI_color.png" alt="Café Bild">
+            <img src="BOMI_color.png">
             <div>
                 <h2>Willkommen bei BOMI</h2>
-                <p>Genießen Sie unser köstliches Angebot an Pizza, Kuchen und Kaffee in einer gemütlichen Atmosphäre.</p>
+                <p>Genießen Sie unser köstliches Angebot an Pizza, Kuchen und Kaffee in einer gemütlichen Atmosphäre.
+                </p>
             </div>
         </div>
 
         <div id="about" class="content animate__animated animate__fadeInUp">
-            <img src="Team 1.png" alt="Über uns Bild">
+            <img src="Team 1.png">
             <div>
                 <h2>Über uns</h2>
-                <p>Das BOMI Café und Pizza Bar ist ein gemütlicher Ort in Villach, der eine Vielzahl von leckeren Speisen und Getränken anbietet. Kommen Sie vorbei und genießen Sie unser Frühstück, unsere Pizza und unsere hausgemachten Kuchen!</p>
+                <p>Das BOMI Café und Pizza Bar ist ein gemütlicher Ort in Villach, der eine Vielzahl von leckeren
+                    Speisen und Getränken anbietet. Kommen Sie vorbei und genießen Sie unser Frühstück, unsere Pizza und
+                    unsere hausgemachten Kuchen!</p>
             </div>
         </div>
 
         <div id="menu" class="content animate__animated animate__fadeInUp">
-            <img src="Pizza.png" alt="Menü Bild">
+            <img src="Pizza.png">
             <div>
                 <h2>Menü</h2>
                 <ul>
@@ -200,7 +282,7 @@
         </div>
 
         <div id="contact" class="content animate__animated animate__fadeInUp">
-            <img src="Visitenkarte.jpeg" alt="Kontakt Bild">
+            <img src="Visitenkarte.jpeg">
             <div>
                 <h2>Kontakt</h2>
                 <p>Adresse: Handwerksstraße 22, 9500 Villach, Österreich</p>
@@ -208,31 +290,40 @@
                 <p>E-Mail: <a href="mailto:hallo@bomi.at">hallo@bomi.at</a></p>
             </div>
         </div>
+
     </div>
 
     <div class="footer">
-        <p>&copy; 2024 BOMI Café und Pizza Bar</p>
+        <p>© 2024 BOMI Café und Pizza Bar</p>
+
         <div class="social-icons">
-            <a href="https://www.facebook.com/p/Caf%C3%A9-Pizza-Bar-Bomi-61555736948519/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/p/Caf%C3%A9-Pizza-Bar-Bomi-61555736948519/"><i
+                    class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/cafelounge_bar.bomi/"><i class="fab fa-instagram"></i></a>
         </div>
+
     </div>
 
     <div class="back-to-top" onclick="scrollToTop()">↑</div>
 
     <script>
-        // Smooth scrolling
+
+        /* Smooth Scroll */
+
         document.querySelectorAll('.navbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
 
-        // Fade-in effect
+        /* Fade Animation */
+
         const contents = document.querySelectorAll('.content');
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -246,8 +337,10 @@
             observer.observe(content);
         });
 
-        // Back to Top button
+        /* Back To Top */
+
         const backToTop = document.querySelector('.back-to-top');
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTop.style.display = 'block';
@@ -259,8 +352,11 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-</body>
-</html>
 
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+</body>
+
+</html>
