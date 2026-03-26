@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOMI Café und Pizza Bar</title>
+    <title>BOMI Café und Lounge Bar</title>
+    <meta name="description" content="BOMI Café in Villach – Frühstück, Kaffee und leckere Kuchen. Besuche uns in der Handwerksstraße 22.">
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -231,6 +232,22 @@
 
         }
     </style>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CafeOrCoffeeShop",
+            "name": "BOMI Café und Lounge Bar",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Handwerksstraße 22",
+                "addressLocality": "Villach",
+                "postalCode": "9500",
+                "addressCountry": "AT"
+            },
+            "telephone": "+436769613511"
+        }
+    </script>
 </head>
 
 <body>
@@ -250,7 +267,7 @@
     <div class="container">
 
         <div id="home" class="content animate__animated animate__fadeInUp">
-            <img src="./bomi.png">
+            <img src="./bomi.png" loading="lazy" alt="BOMI Café">
             <div>
                 <h2>Willkommen bei BOMI</h2>
                 <p>Genießen Sie unser köstliches Angebot an Pizza, Kuchen und Kaffee in einer gemütlichen Atmosphäre.
@@ -259,7 +276,7 @@
         </div>
 
         <div id="about" class="content animate__animated animate__fadeInUp">
-            <img src="./Team 1.png">
+            <img src="./Team 1.png" loading="lazy">
             <div>
                 <h2>Über uns</h2>
                 <p>Das BOMI Café und Pizza Bar ist ein gemütlicher Ort in Villach, der eine Vielzahl von leckeren
@@ -269,7 +286,7 @@
         </div>
 
         <div id="menu" class="content animate__animated animate__fadeInUp">
-            <img src="./Pizza.png">
+            <img src="./Pizza.png" loading="lazy">
             <div>
                 <h2>Menü</h2>
                 <ul>
@@ -282,7 +299,7 @@
         </div>
 
         <div id="contact" class="content animate__animated animate__fadeInUp">
-            <img src="./Visitenkarte.jpeg">
+            <img src="./Visitenkarte.jpeg" loading="lazy">
             <div>
                 <h2>Kontakt</h2>
                 <p>Adresse: Handwerksstraße 22, 9500 Villach, Österreich</p>
@@ -297,9 +314,8 @@
         <p>© 2024 BOMI Café und Pizza Bar</p>
 
         <div class="social-icons">
-            <a href="https://www.facebook.com/p/Caf%C3%A9-Pizza-Bar-Bomi-61555736948519/"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cafelounge_bar.bomi/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/p/Caf%C3%A9-Pizza-Bar-Bomi-61555736948519/" target="_blank" rel="noopener"><iclass="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cafelounge_bar.bomi/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         </div>
 
     </div>
@@ -320,7 +336,7 @@
             });
         });
 
-        
+
         /* Fade Animation */
 
         const contents = document.querySelectorAll('.content');
