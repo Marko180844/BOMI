@@ -21,6 +21,13 @@
             overflow-x: hidden;
         }
 
+        h2 {
+            color: #473F32;
+            border-bottom: 3px solid #A99175;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
         /* HEADER */
 
         .header {
@@ -45,12 +52,13 @@
         .header h1 {
             position: relative;
             z-index: 2;
-            font-size: 3em;
+            font-size: 3.5em;
             display: inline-block;
             white-space: nowrap;
             overflow: hidden;
             border-right: 4px solid white;
             animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            letter-spacing: 1px;
         }
 
         @keyframes typing {
@@ -115,11 +123,11 @@
         }
 
         .content {
-            padding: 20px;
+            padding: 30px;
             background: white;
             margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             opacity: 0;
             transform: translateY(20px);
             transition: opacity .5s ease-out, transform .5s ease-out;
@@ -130,6 +138,24 @@
             transform: translateY(0);
         }
 
+        .content a {
+            color: #A99175;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color .3s;
+        }
+
+        .content a:hover {
+            color: #473F32;
+            text-decoration: underline;
+        }
+
+        .content ul li {
+            margin: 12px 0;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
         .content img {
             width: 100%;
             border-radius: 8px;
@@ -138,6 +164,46 @@
 
         .content img:hover {
             transform: scale(1.05);
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* SECTION TITLE */
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px 0 20px;
+            color: #473F32;
+            border-bottom: 3px solid #A99175;
+            padding-bottom: 10px;
         }
 
         /* FOOTER */
@@ -196,15 +262,20 @@
             .content {
                 display: flex;
                 align-items: center;
-                gap: 20px;
+                gap: 30px;
             }
 
             .content img {
-                width: 50%;
+                width: 45%;
+                flex-shrink: 0;
             }
 
             .content div {
-                width: 50%;
+                width: 55%;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
             }
 
         }
@@ -228,6 +299,29 @@
 
             .header p {
                 font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+                margin: 20px 0;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .content {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .content img {
+                width: 100% !important;
+            }
+
+            .content div {
+                width: 100% !important;
             }
 
         }
@@ -267,54 +361,64 @@
     <div class="container">
 
         <div id="home" class="content animate__animated animate__fadeInUp">
-            <img src="./bomi.png" loading="lazy" alt="BOMI Café">
+            <img src="./bilder/caffee1.png" loading="lazy" alt="BOMI Café">
             <div>
                 <h2>Willkommen bei BOMI</h2>
-                <p>Genießen Sie unser köstliches Angebot an Pizza, Kuchen und Kaffee in einer gemütlichen Atmosphäre.
-                </p>
+                <p>Genießen Sie unser köstliches Angebot an Frühstücken, Kuchen und Kaffee in einer gemütlichen Atmosphäre. Besuchen Sie uns für das perfekte Erlebnis!</p>
             </div>
         </div>
 
         <div id="about" class="content animate__animated animate__fadeInUp">
-            <img src="./Team 1.png" loading="lazy">
+            <img src="./bilder/team.jpg" loading="lazy" alt="Unser Team">
             <div>
                 <h2>Über uns</h2>
-                <p>Das BOMI Café und Pizza Bar ist ein gemütlicher Ort in Villach, der eine Vielzahl von leckeren
-                    Speisen und Getränken anbietet. Kommen Sie vorbei und genießen Sie unser Frühstück, unsere Pizza und
-                    unsere hausgemachten Kuchen!</p>
+                <p>Das BOMI Café und Lounge Bar ist ein gemütlicher Ort in Villach, der eine Vielzahl von leckeren Speisen und Getränken anbietet. Unser freundliches Team freut sich auf Ihren Besuch.</p>
             </div>
         </div>
 
         <div id="menu" class="content animate__animated animate__fadeInUp">
-            <img src="./Pizza.png" loading="lazy">
+            <img src="./bilder/fruestueck-fuer-2.jpg" loading="lazy" alt="Frühstück">
             <div>
                 <h2>Menü</h2>
                 <ul>
-                    <li>Frühstücksangebote</li>
-                    <li>Verschiedene Pizzasorten</li>
-                    <li>Hausgemachte Kuchen und Mehlspeisen</li>
-                    <li>Frischer Kaffee und andere Getränke</li>
+                    <li>🍳 Frühstücksangebote</li>
+                    <li>🍰 Kuchen und Mehlspeisen</li>
+                    <li>☕ Frischer Kaffee und andere Getränke</li>
                 </ul>
             </div>
         </div>
 
+        <h2 class="section-title">🍽️ Unsere Spezialitäten</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./bilder/ham-and-eggs.png" loading="lazy" alt="Ham and Eggs">
+            </div>
+            <div class="gallery-item">
+                <img src="./bilder/omelett.png" loading="lazy" alt="Omelett">
+            </div>
+            <div class="gallery-item">
+                <img src="./bilder/caffee1.png" loading="lazy" alt="Kaffee">
+            </div>
+        </div>
+
         <div id="contact" class="content animate__animated animate__fadeInUp">
-            <img src="./Visitenkarte.jpeg" loading="lazy">
+            <img src="./bilder/visitenkarte.jpg" loading="lazy" alt="Kontakt">
             <div>
-                <h2>Kontakt</h2>
-                <p>Adresse: Handwerksstraße 22, 9500 Villach, Österreich</p>
-                <p>Telefon: +43 676 9613511</p>
-                <p>E-Mail: <a href="mailto:hallo@bomi.at">hallo@bomi.at</a></p>
+                <h2>Kontakt & Besuchszeiten</h2>
+                <p><strong>📍 Adresse:</strong> Handwerksstraße 22, 9500 Villach, Österreich</p>
+                <p><strong>📞 Telefon:</strong> <a href="tel:+436769613511">+43 676 9613511</a></p>
+                <p><strong>📧 E-Mail:</strong> <a href="mailto:hallo@bomi.at">hallo@bomi.at</a></p>
+                <p><strong>🕐 Öffnungszeiten:</strong><br>Montag - Freitag: 06:30 - 19:00 Uhr<br>Samstag: 06:30 - 16:00 Uhr</p>
             </div>
         </div>
 
     </div>
 
     <div class="footer">
-        <p>© 2024 BOMI Café und Pizza Bar</p>
+        <p>© BOMI Café und Lounge Bar | Handwerksstraße 22, Villach</p>
 
         <div class="social-icons">
-            <a href="https://www.facebook.com/p/Caf%C3%A9-Pizza-Bar-Bomi-61555736948519/" target="_blank" rel="noopener"><iclass="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/p/Caf%C3%A9-Pizza-Bar-Bomi-61555736948519/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/cafelounge_bar.bomi/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
         </div>
 
